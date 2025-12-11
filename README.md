@@ -24,6 +24,7 @@ ESPN NBA API (Primary data source)
 Pages
   Home: Hero section with spotlight player, today's games, latest news, quick navigation
   Players: Search with autocomplete, filter options, grid of player cards
+
   Player Detail: Hero card with player image, season statistics, animated stat bars, career highlights
   Standings: Conference toggle tabs, ranked table with color-coded rows
   Scores: Date selector, game cards with live scores, auto-refresh for live games
