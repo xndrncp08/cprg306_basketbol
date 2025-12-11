@@ -92,10 +92,10 @@ export default function HomePage() {
               <span className="text-white">NBA 2K Inspired Stats</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Real-time NBA statistics with our immersive 2K-style interface
+              Real-time NBA statistics
             </p>
             <p className="text-sm text-gray-400 mt-4">
-              Using Free Tier API - Some features limited
+              By Xander Rancap
             </p>
           </div>
 
