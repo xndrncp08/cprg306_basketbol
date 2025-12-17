@@ -1,10 +1,18 @@
-export default function SeasonSelector({ season, setSeason }) {
+/**
+ *
+ * This component provides a dropdown menu for selecting an NBA season. It
+ * highlights the currently selected season and notifies parent components
+ * when the selection changes, allowing standings data to update dynamically.
+ */
+
+
+const SeasonSelector = ({ season, setSeason }) => {
   const seasons = [
     { id: '2024', label: 'Current' },
     { id: '2023', label: '2022-2023' },
     { id: '2022', label: '2021-2022' },
     { id: '2021', label: '2020-2021' },
-  ]
+  ];
 
   return (
     <div className="mb-6">
@@ -25,5 +33,7 @@ export default function SeasonSelector({ season, setSeason }) {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
+
+export default SeasonSelector;

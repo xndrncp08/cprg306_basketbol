@@ -1,0 +1,41 @@
+app/layout.js
+The root layout file that wraps all pages with consistent structure and styling. It sets up the global dark theme with gradient background, imports the navigation bar component for site-wide navigation, and defines the footer with attribution text. The layout ensures all child pages inherit the same styling context and responsive behavior.
+
+app/page.js (Home Page)
+The main dashboard page that aggregates multiple data sources into a unified view. It fetches three types of data in parallel: today's games from ESPN API, featured players from BallDontLie API, and news articles from ESPN. The page manages separate loading states for each data section to provide granular feedback. Feature cards dynamically update their counts based on fetched data. The component structure separates different content areas while maintaining consistent styling through shared CSS classes.
+
+app/news/page.js
+The news listing page that displays NBA articles with filtering and search capabilities. It loads news data from ESPN API and provides category filtering buttons that update the displayed articles. The search functionality filters articles by headline and description text. The layout uses a responsive grid with sidebar filters on larger screens and stacked layout on mobile. Each article card links to the original ESPN article in a new tab.
+
+app/players/page.js
+The player directory with search, filtering, and pagination. It fetches player data from BallDontLie API with pagination support and allows searching by player name. Position filters categorize players by their role (Guard, Forward, Center). The page displays mock statistics for each player since free tier API doesn't provide real stats. The component manages pagination state and refreshes data when page changes or search is performed.
+
+app/standings/page.js
+The conference standings page showing team rankings and records. It attempts to fetch real standings from ESPN API, falling back to generated mock data if the API fails. The page processes the API response to extract Eastern and Western conference teams, calculates win percentages and games behind, and sorts teams by performance. Users can switch between conferences and select different seasons. The table highlights playoff positions with color coding.
+
+components/Navbar.js
+Responsive navigation component that adapts to mobile and desktop screens. It tracks the current route to highlight active navigation items. On mobile, it toggles a dropdown menu. The navigation uses Next.js Link components for client-side routing without page reloads. The styling includes a sticky header with backdrop blur for visual effect.
+
+components/GameCard.js
+Reusable component for displaying individual game information. It extracts home and away team data from the game object, formats the game time, and shows live status indicators. The card displays team names, abbreviations, scores, and records. For live games, it shows quarter and clock information. The component handles missing data gracefully with fallback values.
+
+components/PlayerCard.js
+Player profile card that displays player information and simulated statistics. It generates mock stats based on player position using the API wrapper's function. The card shows player initials in a gradient circle, name, jersey number, position, and team. Statistics are presented in a grid layout with color-coded values. A disclaimer indicates stats are simulated for free tier API.
+
+components/NewsCard.js
+Article display component that shows news headlines, descriptions, and images. It supports two view modes: compact for lists and full for detailed views. The card links to the original ESPN article externally. It formats publication dates and handles missing images gracefully. The component truncates long descriptions to maintain consistent card heights.
+
+components/ConferenceTabs.js
+Tab switcher for toggling between Eastern and Western conference views on the standings page. It receives current conference and count data as props and updates the parent state when clicked. The component visually indicates the active tab with different styling and shows team counts for each conference.
+
+components/SeasonSelector.js
+Season dropdown component that allows users to select different NBA seasons. It maps season IDs to display labels and communicates selection changes to the parent component via callback function. The active season is highlighted with distinct styling.
+
+lib/api/espn.js
+ESPN API wrapper that handles all requests to ESPN's public NBA endpoints. Each function constructs the appropriate URL, makes the HTTP request using axios, and returns processed data. The wrapper centralizes error handling and provides consistent interface for all ESPN data needs. No API key is required for ESPN's public endpoints.
+
+lib/api/balldontlie.js
+BallDontLie API wrapper that manages player and team data requests. It initializes the official SDK with environment API key. Functions handle pagination, search, and data transformation. Since free tier doesn't include statistics, a mock stats generator creates realistic numbers based on player position. The wrapper implements fallbacks for API failures.
+
+lib/utils/formatters.js
+Utility functions for formatting dates, times, and team abbreviations. The date formatter converts ISO strings to readable formats. The game time formatter extracts time information for display. The team abbreviation function maps full team names to standard NBA abbreviations with fallback to generated initials.
