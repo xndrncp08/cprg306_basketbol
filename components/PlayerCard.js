@@ -19,7 +19,7 @@ const PlayerCard = ({ player, detailed = false }) => {
     <div
       className={`${cardStyle} p-6 text-center hover:scale-105 transition-transform`}
     >
-      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 mx-auto mb-4 flex items-center justify-center text-xl font-bold">
+      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 mx-auto mb-4 flex items-center justify-center text-xl font-bold">
         {player.first_name[0]}
         {player.last_name[0]}
       </div>
@@ -29,13 +29,13 @@ const PlayerCard = ({ player, detailed = false }) => {
       <p className="text-gray-400 text-sm mb-3">
         #{player.jersey_number || "00"} • {player.position || "G"}
       </p>
-      <p className="text-blue-400 font-semibold mb-4">
+      <p className="text-rose-400 font-semibold mb-4">
         {player.team?.full_name || "Free Agent"}
       </p>
 
       <div className="grid grid-cols-2 gap-2 text-sm mt-4">
         <div>
-          <div className="font-bold text-blue-500">{mockStats.pts}</div>
+          <div className="font-bold text-purple-500">{mockStats.pts}</div>
           <div className="text-gray-400">PPG</div>
         </div>
         <div>
@@ -43,11 +43,11 @@ const PlayerCard = ({ player, detailed = false }) => {
           <div className="text-gray-400">RPG</div>
         </div>
         <div>
-          <div className="font-bold text-orange-500">{mockStats.ast}</div>
+          <div className="font-bold text-purple-500">{mockStats.ast}</div>
           <div className="text-gray-400">APG</div>
         </div>
         <div>
-          <div className="font-bold text-green-500">
+          <div className="font-bold text-purple-500">
             {(mockStats.fg_pct * 100).toFixed(1)}%
           </div>
           <div className="text-gray-400">FG%</div>

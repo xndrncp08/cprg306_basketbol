@@ -24,7 +24,7 @@ const SeasonSelector = ({ season, setSeason }) => {
             onClick={() => setSeason(s.id)}
             className={`px-4 py-2 rounded-lg text-sm font-medium ${
               season === s.id
-                ? 'bg-blue-600 text-white'
+                ? 'bg-purple-600 text-white'
                 : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
             }`}
           >

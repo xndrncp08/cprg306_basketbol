@@ -79,8 +79,8 @@ export default function NewsPage() {
       <div className="container mx-auto px-4">
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 flex items-center">
-            <FaNewspaper className="mr-4 text-orange-500" />
-            <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+            <FaNewspaper className="mr-4 text-purple-500" />
+            <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
               NBA News
             </span>
           </h1>
@@ -93,7 +93,7 @@ export default function NewsPage() {
           <div className="lg:col-span-1">
             <div className={`${cardStyle} p-6 mb-6`}>
               <h3 className="font-bold text-lg mb-4 flex items-center">
-                <FaTag className="mr-2 text-blue-400" />
+                <FaTag className="mr-2 text-purple-400" />
                 Categories
               </h3>
               <div className="space-y-2">
@@ -103,7 +103,7 @@ export default function NewsPage() {
                     onClick={() => setFilter(category.id)}
                     className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
                       filter === category.id
-                        ? "bg-blue-600 text-white"
+                        ? "bg-purple-600 hover:bg-purple-700 text-white"
                         : "text-gray-300 hover:bg-gray-700"
                     }`}
                   >
@@ -115,7 +115,7 @@ export default function NewsPage() {
 
             <div className={`${cardStyle} p-6`}>
               <h3 className="font-bold text-lg mb-4 flex items-center">
-                <FaCalendar className="mr-2 text-green-400" />
+                <FaCalendar className="mr-2 text-purple-400" />
                 Latest Update
               </h3>
               <p className="text-gray-300 mb-2">
@@ -140,7 +140,7 @@ export default function NewsPage() {
                   placeholder="Search news articles..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 text-white"
                 />
                 <button
                   onClick={() => setSearchTerm("")}
@@ -154,7 +154,7 @@ export default function NewsPage() {
             <button
               onClick={fetchNews}
               disabled={loading}
-              className="mb-6 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-white text-sm font-semibold disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
+              className="mb-6 px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg text-white text-sm font-semibold disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
             >
               {loading ? "Refreshing..." : "Refresh News"}
             </button>

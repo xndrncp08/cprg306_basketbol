@@ -29,7 +29,7 @@ const GameCard = ({ game }) => {
           <span
             className={`px-3 py-1 rounded-full text-sm ${
               status === "in"
-                ? "bg-red-500/20 text-red-400 animate-pulse"
+                ? "bg-purple-500/20 text-purple-400 animate-pulse"
                 : status === "post"
                 ? "bg-green-500/20 text-green-400"
                 : "bg-gray-500/20 text-gray-400"

@@ -35,12 +35,12 @@ const Navbar = () => {
   const isActive = (path) => pathname === path;
 
   return (
-    <nav className="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
+    <nav className="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-sm border-b border-purple-800">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link
             href="/"
-            className="text-xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent"
+            className="text-xl font-bold bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent"
           >
             NBA 2K Stats
           </Link>
@@ -52,7 +52,7 @@ const Navbar = () => {
                 href={item.href}
                 className={`px-4 py-2 rounded-lg flex items-center transition-colors ${
                   isActive(item.href)
-                    ? "bg-blue-600 text-white"
+                    ? "bg-purple-800 text-white hover:bg-purple-900"
                     : "text-gray-300 hover:bg-gray-800"
                 }`}
               >
@@ -79,7 +79,7 @@ const Navbar = () => {
                   href={item.href}
                   className={`px-4 py-3 rounded-lg flex items-center ${
                     isActive(item.href)
-                      ? "bg-blue-600 text-white"
+                      ? "bg-purple-600 text-white"
                       : "text-gray-300 hover:bg-gray-800"
                   }`}
                   onClick={() => setIsOpen(false)}

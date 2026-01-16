@@ -235,20 +235,20 @@ export default function StandingsPage() {
 
   const getPlayoffColor = (rank) => {
     if (rank <= 6) return "border-l-4 border-l-green-500 bg-green-500/10";
-    if (rank <= 10) return "border-l-4 border-l-yellow-500 bg-yellow-500/10";
+    if (rank <= 10) return "border-l-4 border-l-orange-500 bg-orange-500/10";
     return "border-l-4 border-l-gray-600 bg-gray-800/30";
   };
 
   const getStreakColor = (streak) => {
     if (!streak) return "bg-gray-500/20 text-gray-400";
     if (streak.startsWith("W")) return "bg-green-500/20 text-green-400";
-    if (streak.startsWith("L")) return "bg-red-500/20 text-red-400";
+    if (streak.startsWith("L")) return "bg-rose-500/20 text-red-400";
     return "bg-gray-500/20 text-gray-400";
   };
 
   const getTrendIcon = (rank) => {
     if (rank <= 3) return <FaChevronUp className="text-green-400 text-sm" />;
-    if (rank >= 13) return <FaChevronDown className="text-red-400 text-sm" />;
+    if (rank >= 13) return <FaChevronDown className="text-rose-400 text-sm" />;
     return <FaMinus className="text-gray-400 text-sm" />;
   };
 
@@ -263,8 +263,8 @@ export default function StandingsPage() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-2 flex items-center">
-                <FaTrophy className="mr-3 text-yellow-500" />
-                <span className="bg-gradient-to-r from-yellow-500 to-orange-500 bg-clip-text text-transparent">
+                <FaTrophy className="mr-3 text-purple-500" />
+                <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
                   NBA Standings
                 </span>
               </h1>
@@ -279,7 +279,7 @@ export default function StandingsPage() {
               <button
                 onClick={fetchRealStandings}
                 disabled={loading}
-                className="mt-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-white text-sm font-semibold disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
+                className="mt-2 px-4 py-2 bg-puple-600 hover:bg-purple-700 rounded-lg text-white text-sm font-semibold disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
               >
                 <FaSyncAlt
                   className={`mr-2 ${loading ? "animate-spin" : ""}`}
@@ -291,8 +291,8 @@ export default function StandingsPage() {
 
           {error && (
             <div className="mb-6 p-4 bg-red-500/10 border border-red-500/30 rounded-lg">
-              <p className="text-red-400 font-semibold">Error: {error}</p>
-              <p className="text-red-500/80 text-sm mt-1">
+              <p className="text-pink-400 font-semibold">Error: {error}</p>
+              <p className="text-pink-500/80 text-sm mt-1">
                 Using fallback data. Check console for details.
               </p>
             </div>
@@ -365,9 +365,9 @@ export default function StandingsPage() {
                           <span
                             className={`w-8 h-8 flex items-center justify-center rounded-full mr-3 ${
                               team.rank <= 6
-                                ? "bg-green-500/20 text-green-400"
+                                ? "bg-green-500/20 text-gray-400"
                                 : team.rank <= 10
-                                ? "bg-yellow-500/20 text-yellow-400"
+                                ? "bg-rose-500/20 text-gray-400"
                                 : "bg-gray-700 text-gray-400"
                             }`}
                           >
@@ -456,7 +456,7 @@ export default function StandingsPage() {
                 </span>
               </div>
               <div className="flex items-center">
-                <div className="w-3 h-3 rounded-full bg-yellow-500 mr-3"></div>
+                <div className="w-3 h-3 rounded-full bg-rose-500 mr-3"></div>
                 <span className="text-gray-400">7-10: Play-In Tournament</span>
               </div>
               <div className="flex items-center">
@@ -471,15 +471,15 @@ export default function StandingsPage() {
             <div className="space-y-3 text-sm">
               <div className="flex justify-between">
                 <span className="text-gray-400">API:</span>
-                <span className="text-blue-400">ESPN Official API</span>
+                <span className="text-rose-400">ESPN Official API</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-400">Updates:</span>
-                <span className="text-green-400">Real-time</span>
+                <span className="text-rose-400">Real-time</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-400">Fallback:</span>
-                <span className="text-yellow-400">Mock Data</span>
+                <span className="text-rose-400">Mock Data</span>
               </div>
             </div>
           </div>
@@ -489,17 +489,17 @@ export default function StandingsPage() {
             <div className="space-y-3 text-sm">
               <div className="flex justify-between">
                 <span className="text-gray-400">Last Updated:</span>
-                <span className="text-blue-400">{lastUpdated || "Never"}</span>
+                <span className="text-rose-400">{lastUpdated || "Never"}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-400">Conference:</span>
-                <span className="text-purple-400">
+                <span className="text-rose-400">
                   {conference === "eastern" ? "Eastern" : "Western"}
                 </span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-400">Teams:</span>
-                <span className="text-green-400">
+                <span className="text-rose-400">
                   {currentStandings.length}
                 </span>
               </div>
@@ -510,7 +510,7 @@ export default function StandingsPage() {
         <div className="mt-8 text-center text-sm text-gray-500">
           <p>
             {error ? (
-              <span className="text-red-400">Error: {error}</span>
+              <span className="text-rose-400 text-shadow-amber-950">Error: {error}</span>
             ) : (
               <span className="text-green-400">Connected to ESPN API</span>
             )}

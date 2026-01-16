@@ -26,7 +26,7 @@ const ConferenceTabs = ({
           onClick={() => setConference(tab.id)}
           className={`px-6 py-4 font-semibold text-lg flex items-center border-b-2 transition-all ${
             conference === tab.id
-              ? "border-blue-500 text-blue-500 bg-blue-500/5"
+              ? "border-purple-500 text-purple-500 bg-blue-500/5"
               : "border-transparent text-gray-400 hover:text-white hover:bg-gray-800/50"
           }`}
         >

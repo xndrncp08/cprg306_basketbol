@@ -104,8 +104,8 @@ export default function PlayersPage() {
       <div className="container mx-auto px-4">
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 flex items-center">
-            <FaUser className="mr-4 text-blue-500" />
-            <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+            <FaUser className="mr-4 text-purple-500" />
+            <span className="bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent">
               NBA Players
             </span>
           </h1>
@@ -118,7 +118,7 @@ export default function PlayersPage() {
           <div className="lg:col-span-1">
             <div className={`${cardStyle} p-6 mb-6`}>
               <h3 className="font-bold text-lg mb-4 flex items-center">
-                <FaFilter className="mr-2 text-blue-400" />
+                <FaFilter className="mr-2 text-purple-400" />
                 Filter by Position
               </h3>
               <div className="space-y-2">
@@ -128,7 +128,7 @@ export default function PlayersPage() {
                     onClick={() => setFilter(position.id)}
                     className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
                       filter === position.id
-                        ? "bg-blue-600 text-white"
+                        ? "bg-purple-600 text-white hover:bg-purple-600"
                         : "text-gray-300 hover:bg-gray-700"
                     }`}
                   >
@@ -140,7 +140,7 @@ export default function PlayersPage() {
 
             <div className={`${cardStyle} p-6`}>
               <h3 className="font-bold text-lg mb-4 flex items-center">
-                <FaSort className="mr-2 text-green-400" />
+                <FaSort className="mr-2 text-purple-400" />
                 Sort By
               </h3>
               <div className="space-y-2">
@@ -148,7 +148,7 @@ export default function PlayersPage() {
                   onClick={() => setSortBy("name")}
                   className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
                     sortBy === "name"
-                      ? "bg-blue-600 text-white"
+                      ? "bg-purple-600 text-white"
                       : "text-gray-300 hover:bg-gray-700"
                   }`}
                 >
@@ -158,7 +158,7 @@ export default function PlayersPage() {
                   onClick={() => setSortBy("team")}
                   className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
                     sortBy === "team"
-                      ? "bg-blue-600 text-white"
+                      ? "bg-purple-600 text-white"
                       : "text-gray-300 hover:bg-gray-700"
                   }`}
                 >
@@ -178,14 +178,14 @@ export default function PlayersPage() {
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     onKeyPress={(e) => e.key === "Enter" && searchPlayers()}
-                    className="w-full px-4 py-3 pl-12 bg-gray-800/50 border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                    className="w-full px-4 py-3 pl-12 bg-gray-800/50 border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 text-white"
                   />
                   <FaSearch className="absolute left-4 top-4 text-gray-400" />
                 </div>
                 <button
                   onClick={searchPlayers}
                   disabled={loading}
-                  className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl text-white font-semibold disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
+                    className="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-xl text-white font-semibold disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
                 >
                   <FaSearch className="mr-2" />
                   Search

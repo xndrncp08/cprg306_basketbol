@@ -72,35 +72,35 @@ export default function HomePage() {
     }
   };
 
-  const cardStyle = 'bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700 shadow-lg shadow-black/50 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300';
+  const cardStyle = 'bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700 shadow-lg shadow-black/50 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-300';
   const featureCards = [
     {
       icon: <FaFire />,
       title: 'Live Scores',
       desc: `${games.length} games today`,
       stat: games.length,
-      color: 'from-red-500 to-orange-500',
+      color: 'from-purple-500 to-magenta-500',
     },
     {
       icon: <FaTrophy />,
       title: 'Standings',
       desc: 'Conference rankings',
       stat: '30 teams',
-      color: 'from-yellow-500 to-green-500',
+      color: 'from-purple-500 to-magenta-500',
     },
     {
       icon: <FaUsers />,
       title: 'Players',
       desc: `${players.length} featured`,
       stat: players.length,
-      color: 'from-blue-500 to-cyan-500',
+      color: 'from-purple-500 to-magenta-500',
     },
     {
       icon: <FaNewspaper />,
       title: 'News',
       desc: `${news.length} articles`,
       stat: news.length,
-      color: 'from-purple-500 to-pink-500',
+      color: 'from-purple-500 to-magenta-500',
     },
   ];
   const quickLinks = [
@@ -108,25 +108,25 @@ export default function HomePage() {
       title: 'All Players',
       href: '/players',
       desc: 'Browse all NBA players',
-      color: 'from-blue-500 to-cyan-500',
+      color: 'from-purple-800 to-pink-900',
     },
     {
       title: 'Standings',
       href: '/standings',
       desc: 'Conference rankings',
-      color: 'from-green-500 to-emerald-500',
+      color: 'from-purple-800 to-pink-900',
     },
     {
       title: 'Schedule',
       href: '/scores',
       desc: 'Game schedule & scores',
-      color: 'from-orange-500 to-red-500',
+      color: 'from-purple-800 to-pink-900',
     },
     {
       title: 'Player Compare',
       href: '/compare',
       desc: 'Compare player stats',
-      color: 'from-purple-500 to-pink-500',
+      color: 'from-purple-800 to-pink-900',
     },
   ];
 
@@ -136,7 +136,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-500 via-purple-600 to-orange-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-purple-500 via-rose-600 to-violet-500 bg-clip-text text-transparent">
                 Basketbol
               </span>
               <br />
@@ -150,11 +150,11 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
             {featureCards.map((feature, index) => (
               <div
                 key={index}
-                className={`${cardStyle} p-6 text-center hover:scale-105`}
+                className={`${cardStyle} p-8 text-center hover:purple-600`}
               >
                 <div
                   className={`text-4xl mb-4 bg-gradient-to-r ${feature.color} bg-clip-text text-transparent`}
@@ -163,7 +163,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
                 <p className="text-gray-400 text-sm mb-2">{feature.desc}</p>
-                <div className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                <div className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent">
                   {feature.stat}
                 </div>
               </div>
@@ -175,8 +175,8 @@ export default function HomePage() {
       <div className="container mx-auto px-4 py-12">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-3xl font-bold flex items-center">
-            <FaBasketballBall className="mr-3 text-blue-500" />
-            <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+            <FaBasketballBall className="mr-3 text-purple-500" />
+            <span className="bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent">
               Today's Games
             </span>
           </h2>
@@ -208,11 +208,11 @@ export default function HomePage() {
       <div className="container mx-auto px-4 py-12">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-3xl font-bold">
-            <span className="bg-gradient-to-r from-blue-500 via-purple-600 to-orange-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-purple-500 via-rose-800 to-purple-500 bg-clip-text text-transparent">
               Featured Players
             </span>
           </h2>
-          <a href="/players" className="text-blue-400 hover:text-blue-300 text-sm">
+          <a href="/players" className="text-purple-400 hover:text-purple-500 text-sm">
             View All Players →
           </a>
         </div>
@@ -235,12 +235,12 @@ export default function HomePage() {
       <div className="container mx-auto px-4 py-12">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-3xl font-bold flex items-center">
-            <FaNewspaper className="mr-3 text-orange-500" />
-            <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+            <FaNewspaper className="mr-3 text-purple-500" />
+            <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
               Latest NBA News
             </span>
           </h2>
-          <a href="/news" className="text-orange-400 hover:text-orange-300 text-sm">
+          <a href="/news" className="text-purple-400 hover:text-purple-300 text-sm">
             All News →
           </a>
         </div>
@@ -273,11 +273,11 @@ export default function HomePage() {
             <a
               key={link.title}
               href={link.href}
-              className={`${cardStyle} p-8 text-center hover:scale-105 transition-transform bg-gradient-to-br ${link.color} bg-opacity-10 hover:bg-opacity-20`}
+              className={`${cardStyle} p-8 text-center hover:purple-600 transition-transform bg-gradient-to-br ${link.color} bg-opacity-10 hover:purple-600`}
             >
               <h3 className="text-xl font-bold mb-2">{link.title}</h3>
               <p className="text-gray-300">{link.desc}</p>
-              <div className="mt-4 text-blue-400">Explore →</div>
+              <div className="mt-4 text-white-400">Explore →</div>
             </a>
           ))}
         </div>
